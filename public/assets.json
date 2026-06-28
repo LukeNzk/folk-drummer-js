@@ -1,0 +1,55 @@
+{
+    "baraban": {
+        "sounds": {
+            "skin": {
+                "type": 0,
+                "variants": [
+                    "compressed\\big\\skinwt-01.ogg",
+                    "compressed\\big\\skinwt-02.ogg",
+                    "compressed\\big\\skinwt-03.ogg",
+                    "compressed\\big\\skinwt-04.ogg"
+                ]
+            },
+            "triangle": {
+                "type": 1,
+                "variants": [
+                    "compressed\\big\\triangle-01.ogg",
+                    "compressed\\big\\triangle-02.ogg",
+                    "compressed\\big\\triangle-03.ogg",
+                    "compressed\\big\\triangle-04.ogg"
+                ]
+            }
+        }
+    },
+    "frame": {
+        "sounds": {
+            "skin": {
+                "type": 0,
+                "variants": [
+                    "compressed\\frame\\skin\\skin-1.ogg",
+                    "compressed\\frame\\skin\\skin-2.ogg",
+                    "compressed\\frame\\skin\\skin-3.ogg"
+                ]
+            },
+            "bells": {
+                "type": 1,
+                "variants": [
+                    "compressed\\frame\\bells\\bells-1.ogg",
+                    "compressed\\frame\\bells\\bells-2.ogg",
+                    "compressed\\frame\\bells\\bells-3.ogg",
+                    "compressed\\frame\\bells\\bells-4.ogg",
+                    "compressed\\frame\\bells\\bells-5.ogg"
+                ]
+            },
+            "hybrid": {
+                "type": 2,
+                "variants": [
+                    "compressed\\frame\\hybrid\\hybrid-1.ogg",
+                    "compressed\\frame\\hybrid\\hybrid-2.ogg",
+                    "compressed\\frame\\hybrid\\hybrid-3.ogg",
+                    "compressed\\frame\\hybrid\\hybrid-4.ogg"
+                ]
+            }
+        }
+    }
+}

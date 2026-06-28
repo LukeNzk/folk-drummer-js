@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bębnista v2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Inter:900");
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'app-background': 'rgba(28, 28, 28, 1)',
+              'app-primary': 'rgba(224, 240, 250, 1)',
+              'app-secondary': 'rgba(245, 162, 78, 1)',
+              'text': 'rgba(217, 217, 217, 1)',
+            },
+            boxShadow: {
+              'unflatten': '0px 0px 5px 0px rgba(0, 0, 0, 0.8)'
+            },
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        font-weight: 900;
+        /* overscroll-behavior: none; prevents bounce on some browsers */
+        /* touch-action: none;        prevents panning/zooming gestures */
+      }
+
+      .play-icon
+      {
+        filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.8))
+      }
+    </style>
+  </head>
+  <body class="bg-app-background flex items-center justify-center min-h-screen select-none">
+    <div id="app" class="flex flex-col gap-y-6 md:gap-y-12 w-full sm:max-w-[30rem] max-w-[90%] py-10">
+
+      <!-- Metrum button -->
+      <div class="flex items-center justify-center">
+      </div>
+      <div class="flex items-center justify-center">
+        <!-- Language -->
+        <!-- <button class="w-[60px] h-[60px] bg-app-primary text-app-background font-black text-lg rounded-[5px] hover:bg-opacity-90 transition-colors">
+          PL
+        </button> -->
+
+        <button id="metrum-toggle" class="flex text-2xl">
+          <div class="flex bg-app-secondary w-[4rem] md:w-[5rem] aspect-square h-auto rounded-[5px] transition-transform shadow-unflatten items-center justify-center">
+            3
+          </div>
+          <div class="flex bg-app-primary w-[4rem] md:w-[5rem] aspect-square rounded-[5px] transition-transform shadow-unflatten items-center justify-center">
+            2
+          </div>
+        </button>
+
+        <!-- Setting -->
+        <!-- <button class="w-[60px] h-[60px] p-0 bg-transparent hover:bg-transparent border-0">
+          <img class="w-[60px] h-[60px]" alt="Settings" src="/settings.png" />
+        </button> -->
+      </div>
+
+      <!-- Drum type -->
+      <div class="flex justify-center">
+        <button id="drum-toggle" class="flex">
+          <div id="frame-icon" class="flex scale-[1.1] w-[4rem] md:w-[5rem] aspect-square transition-transform rounded-[5px] shadow-unflatten items-center justify-center">
+            <img class="flex" alt="frame" src="/frame_drum.svg" />
+            
+          </div>
+          <div id="baraban-icon" class="flex bg-app-primary w-[4rem] md:w-[5rem] aspect-square transition-transform rounded-[5px] shadow-unflatten items-center justify-center">
+            <img class="flex" alt="baraban" src="/baraban.svg" />
+          </div>
+        </button>
+      </div>
+            <div class="flex items-center justify-center">
+      </div>
+
+      <!-- <div class="flex justify-center">
+        <img class="my-8" alt="Baraban" src="/baraban.png" />
+      </div> -->
+
+      <!-- Visualization -->
+      <!-- <div class="flex">
+        <div class="relative mt-2 w-full h-[30px] bg-app-primary rounded-[5px] overflow-visible">
+
+        <div class="absolute top-[-5px] left-[100px] flex h-10 w-6 bg-app-primary rounded-[5px] cursor-pointer"></div>
+        <div class="absolute top-[-5px] left-0 flex h-10 w-6 bg-app-primary rounded-[5px] cursor-pointer" id="bpm-preview"></div>
+        <div class="absolute top-[-5px] right-0 flex h-10 w-6 bg-app-primary rounded-[5px] cursor-pointer"></div>
+
+        <div class="absolute w-10 flex h-full bg-app-secondary rounded-[5px]" id="preview-fill"></div>
+
+        </div>
+      </div> -->
+
+      <!-- BPM slider -->
+      <div>
+        <div class="flex font-black gap-8 pl-3 items-end">
+          <div class="flex text-text text-2xl text-center">
+            BPM
+          </div>
+          <div id="bpm-value" class="flex text-text text-3xl text-center">
+            115
+          </div>
+        </div>
+        <div class="flex touch-none">
+          <div class="relative mt-2 w-full h-[1.5rem] lg:h-[2rem] bg-app-primary rounded-[5px] overflow-visible">
+          <div class="absolute flex h-full bg-app-secondary rounded-[5px]" id="bpm-fill"></div>
+          <div class="absolute top-[-5px] left-[100px] flex h-8 lg:h-10 w-7 bg-app-secondary shadow-unflatten rounded-[5px] cursor-pointer" id="bpm-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shift -->
+      <div id="shift-container">
+        <div class="flex font-black gap-8 pl-3 items-end">
+          <div class="flex text-text text-2xl text-center">
+            SHIFT
+          </div>
+          <div id="shift-value" class="flex text-text text-3xl text-center">
+            -15%
+          </div>
+        </div>
+
+        <!-- Shift slider -->
+        <div class="flex touch-none">
+          <div class="relative mt-2 w-full h-[1.5rem] lg:h-[2rem] bg-app-primary rounded-[5px] overflow-visible">
+          <div class="absolute h-full w-[40px] bg-app-secondary rounded-[5px]" id="shift-fill"></div>
+          <div class="absolute top-[-5px] left-[100px] flex h-8 lg:h-10 w-7 bg-app-secondary shadow-unflatten rounded-[5px] cursor-pointer" id="shift-slider"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Play Button -->
+      <div class="mb-10">
+        <div class="flex justify-center" id="play-button">
+          <button class="flex items-center justify-center bg-app-secondary transition-transform hover:scale-105 w-[120px] h-[120px] rounded-[5px]">
+              <svg viewBox="0 0 86.6 100" class="w-[60px] text-app-primary play-icon" fill="currentColor">
+                <polygon points="0,0 86.6,50 0,100" />
+              </svg>
+          </button>
+        </div>
+
+        <!-- Pause button -->
+        <div class="flex hidden justify-center border-0" id="stop-button">
+          <button class="flex items-center justify-center bg-app-primary transition-transform hover:scale-105 w-[120px] h-[120px] rounded-[5px]">
+              <img class="flex w-[62px] play-icon" alt="play" src="/stop.svg"/>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="splash"
+      class="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-md
+              flex items-center justify-center select-none cursor-pointer">
+      <div class="text-text text-xl md:text-2xl font-medium">
+        Tap to start…
+      </div>
+    </div>
+
+    <div id="loading_screen" class="hidden fixed flex flex-col inset-0 z-[9999] bg-black/50 backdrop-blur-md flex items-center justify-center select-none">
+      <div role="status" class="w-[80px] h-[80px] rounded-full border-[10px] border-white/30 border-t-black/50 animate-spin" aria-live="polite" aria-busy="true"></div>
+    </div>
+
+    <footer class="fixed flex bottom-0 py-2 left-0 w-full text-white text-center justify-center bg-black/30">
+      <a class="flex gap-8" href="https://www.facebook.com/bebnistapl" target="_blank" rel="noopener noreferrer">
+        <img class="flex w-[20px]" alt="" src="/2023_fb_icon.svg"/>
+        v 2.0.3
+      </a>
+    </footer>
+
+    <!-- scripts -->
+    <script src="js/play_loop.js?v=1" type="module"></script>
+    <script src="js/ui.js?v=1" type="module"></script>
+  </body>
+</html>

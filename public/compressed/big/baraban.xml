@@ -1,0 +1,17 @@
+<Assets>
+    <Drum id="baraban">
+        <Sound id="skin" type="0">
+            <Variant>skinwt-01.ogg</Variant>
+            <Variant>skinwt-02.ogg</Variant>
+            <Variant>skinwt-03.ogg</Variant>
+            <Variant>skinwt-04.ogg</Variant>
+        </Sound>
+
+        <Sound id="triangle" type="1">
+            <Variant>triangle-01.ogg</Variant>
+            <Variant>triangle-02.ogg</Variant>
+            <Variant>triangle-03.ogg</Variant>
+            <Variant>triangle-04.ogg</Variant>
+        </Sound>
+    </Drum>
+</Assets>

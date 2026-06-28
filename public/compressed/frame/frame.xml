@@ -1,0 +1,24 @@
+<Assets>
+    <Drum id="frame">
+        <Sound id="skin" type="0">
+            <Variant>skin/skin-1.ogg</Variant>
+            <Variant>skin/skin-2.ogg</Variant>
+            <Variant>skin/skin-3.ogg</Variant>
+        </Sound>
+
+        <Sound id="bells" type="1">
+            <Variant>bells/bells-1.ogg</Variant>
+            <Variant>bells/bells-2.ogg</Variant>
+            <Variant>bells/bells-3.ogg</Variant>
+            <Variant>bells/bells-4.ogg</Variant>
+            <Variant>bells/bells-5.ogg</Variant>
+        </Sound>
+
+        <Sound id="hybrid" type="2">
+            <Variant>hybrid/hybrid-1.ogg</Variant>
+            <Variant>hybrid/hybrid-2.ogg</Variant>
+            <Variant>hybrid/hybrid-3.ogg</Variant>
+            <Variant>hybrid/hybrid-4.ogg</Variant>
+        </Sound>
+    </Drum>
+</Assets>
